@@ -5,14 +5,15 @@
 
 package epum;
 
+//вычисляем максимум, среднее, минимум
 enum Operation {
 
     MAX {
-        double action(int[] array) {
-            int max = array[0];
-            for (int i = 0; i < array.length; ++i) {
-                if (array[i] > max) {
-                    max = array[i];
+        double action(int[] arr) {
+            int max = arr[0];
+            for (int i = 0; i < arr.length; ++i) {
+                if (arr[i] > max) {
+                    max = arr[i];
                 }
             }
             return max;
@@ -20,14 +21,14 @@ enum Operation {
     },
 
     AVG {
-        double action(int[] array) {
+        double action(int[] arr) {
             int sum = 0;
 
-            for (int i = 0; i < array.length; ++i) {
-                sum += array[i];
+            for (int i = 0; i < arr.length; ++i) {
+                sum += arr[i];
             }
 
-            double avg = (double) (sum / array.length);
+            double avg = (double) (sum / arr.length);
             return avg;
         }
     },

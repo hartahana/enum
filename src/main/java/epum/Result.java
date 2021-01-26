@@ -4,6 +4,7 @@
 //
 
 package epum;
+//хранит последовательность, операцию и результат расчета
 
 class Result {
     int[] array;
@@ -14,20 +15,20 @@ class Result {
         this.array = input;
         this.oper = oper;
     }
-
+//берем операцию, сравниваем с нужной, выбираем и считаем
     void Oper() {
         epum.Operation op;
-        if (this.oper == "max") {
+        if (this.oper.equals("max")) {
             op = epum.Operation.MAX;
             this.result = op.action(this.array);
         }
 
-        if (this.oper == "min") {
+        if (this.oper.equals("min")) {
             op = epum.Operation.MIN;
             this.result = op.action(this.array);
         }
 
-        if (this.oper == "avg") {
+        if (this.oper.equals("avg")) {
             op = epum.Operation.AVG;
             this.result = op.action(this.array);
         }
